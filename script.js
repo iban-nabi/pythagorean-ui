@@ -13,11 +13,25 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        const tbody = document.querySelector("#pythagorean-table tbody");
-        tbody.insertAdjacentHTML(
-          "afterbegin",
-          `<tr><td>${value}</td><td>${JSON.stringify(data)}</td></tr>`
-        );
+        const invalidMsg = document.querySelector("#invalid-msg");
+        if (invalidMsg) {
+          invalidMsg.remove();
+        }
+
+        if (data.value == null || data.value == undefined) {
+          const form = document.querySelector("#pythagorean-form");
+          const warningElement = document.createElement("p");
+          warningElement.textContent =
+            "Invalid Input! Enter a Perfect Square Value";
+          warningElement.id = "invalid-msg";
+          form.insertAdjacentElement("afterend", warningElement);
+        } else {
+          const tbody = document.querySelector("#pythagorean-table tbody");
+          tbody.insertAdjacentHTML(
+            "afterbegin",
+            `<tr><td>${data.value}</td><td>${data.a}</td><td>${data.b}</td><td>${data.c}</td><td>${data.average}</td></tr>`
+          );
+        }
       })
       .catch((err) => console.error(err));
   }
