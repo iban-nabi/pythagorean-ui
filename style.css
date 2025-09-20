@@ -15,11 +15,13 @@ body {
   background-attachment: fixed;
   background-position: center;
   font-family: "Montserrat-Regular";
+  color: rgb(38, 3, 46);
 }
 
 button {
   color: white !important;
   background-color: rgb(38, 3, 46) !important;
+  border-color: rgb(195, 131, 255) !important;
 }
 
 footer {
@@ -38,13 +40,15 @@ footer {
 
 .web-name {
   font-family: "Montserrat-Black";
-  color: rgb(38, 3, 46);
   text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
     3px 3px 0 white, 0px 3px 0 white, 3px 0px 0 white, 0px -3px 0 white,
     -3px 0px 0 white;
 }
 
+table {
+  border-color: rgb(231, 205, 255) !important;
+}
+
 .table > thead > tr > th {
   background-color: rgb(222, 198, 247) !important;
-  color: rgb(38, 3, 46) !important;
 }
