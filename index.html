@@ -19,47 +19,58 @@
     >
       <h1 class="mb-4 text-center display-1 web-name">Pythagorean Checker!</h1>
 
-      <div class="w-75 p-4 bg-light-purple rounded shadow">
-        <form id="pythagorean-form" method="get" class="mb-4">
-          <label for="input" class="form-label fs-3" id="form-text">
-            Enter a perfect square number:
-          </label>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div
+            class="col-12 col-md-10 col-lg-8 p-4 bg-light-purple rounded shadow"
+          >
+            <form id="pythagorean-form" method="get" class="mb-4">
+              <label for="input" class="form-label fs-3" id="form-text">
+                Enter a perfect square number:
+              </label>
 
-          <div class="row g-2">
-            <div class="col-9">
-              <input
-                type="text"
-                class="form-control"
-                name="input"
-                id="input-box"
-              />
-              <div class="invalid-feedback" id="invalid-msg"></div>
-            </div>
+              <div class="row g-2">
+                <div class="col-12 col-md-9">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="input"
+                    id="input-box"
+                  />
+                  <div class="invalid-feedback" id="invalid-msg"></div>
+                </div>
 
-            <div class="col">
-              <button type="submit" class="btn btn-primary rounded w-100">
-                Submit
-              </button>
+                <div class="col-12 col-md-3">
+                  <button type="submit" class="btn btn-primary rounded w-100">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <div class="table-responsive">
+              <table
+                class="table table-light text-center"
+                id="pythagorean-table"
+              >
+                <thead>
+                  <tr>
+                    <th scope="col">Input</th>
+                    <th scope="col">A</th>
+                    <th scope="col">B</th>
+                    <th scope="col">C</th>
+                    <th scope="col">Average</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr id="no-entries-default">
+                    <td colspan="5" class="text-center">No entries yet</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </form>
-
-        <table class="table table-light text-center" id="pythagorean-table">
-          <thead>
-            <tr>
-              <th scope="col">Input</th>
-              <th scope="col">A</th>
-              <th scope="col">B</th>
-              <th scope="col">C</th>
-              <th scope="col">Average</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr id="no-entries-default">
-              <td colspan="5" class="text-center">No entries yet</td>
-            </tr>
-          </tbody>
-        </table>
+        </div>
       </div>
     </div>
     <script src="script.js"></script>
