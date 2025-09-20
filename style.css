@@ -15,7 +15,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   font-family: "Montserrat-Regular";
-  color: rgb(38, 3, 46);
+  color: rgb(38, 3, 46) !important;
 }
 
 button {
@@ -47,8 +47,14 @@ footer {
 
 table {
   border-color: rgb(231, 205, 255) !important;
+  color: rgb(38, 3, 46) !important;
 }
 
-.table > thead > tr > th {
+table > thead > tr > th {
   background-color: rgb(222, 198, 247) !important;
+}
+
+th,
+td {
+  color: rgb(38, 3, 46) !important;
 }
