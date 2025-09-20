@@ -41,6 +41,12 @@ body {
     -3px 0px 0 white;
 }
 
+footer {
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white, 0px 1px 0 white, 1px 0px 0 white, 0px -1px 0 white,
+    -1px 0px 0 white;
+}
+
 .table > thead > tr > th {
   background-color: rgb(222, 198, 247) !important;
   color: rgb(38, 3, 46) !important;
