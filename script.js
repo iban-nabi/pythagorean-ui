@@ -4,49 +4,66 @@ document
   .getElementById("pythagorean-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    const value = document.getElementById("input-box").value;
+    const value = document.getElementById("input-box").value.trim();
+    const feedback = document.querySelector("#invalid-msg");
 
-    if (value.trim() !== "" && !seen.includes(value)) {
-      sendNumber(value);
+    feedback.textContent = "";
+    feedback.classList.remove("d-block");
+
+    if (value === "") {
+      feedback.textContent = "Input cannot be empty!";
+      feedback.classList.add("d-block");
+      return;
     }
 
-    if (document.querySelector("#invalid-msg") && seen.includes(value)) {
-      document.querySelector("#invalid-msg").remove();
+    if (!seen.includes(value)) {
+      sendNumber(value);
+      return;
     }
   });
 
 function sendNumber(value) {
   const url = `http://localhost:8080/api/pythagorean/calculate-pythagorean-sides/${value}`;
+  const feedback = document.querySelector("#invalid-msg");
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const invalidMsg = document.querySelector("#invalid-msg");
-      if (invalidMsg) {
-        invalidMsg.remove();
+      seen.push(value);
+      const tbody = document.querySelector("#pythagorean-table tbody");
+      const placeholderRow = document.getElementById("no-entries-default");
+
+      if (placeholderRow) {
+        placeholderRow.classList.add("d-none");
       }
 
-      if (data.value == null || data.value == undefined) {
-        const form = document.querySelector("#form-text");
-        const warningElement = document.createElement("p");
-        warningElement.textContent =
-          "Invalid Input! Enter a Perfect Square Value";
-        warningElement.id = "invalid-msg";
-        form.insertAdjacentElement("afterend", warningElement);
-      } else {
-        seen.push(value);
-        const tbody = document.querySelector("#pythagorean-table tbody");
+      if (data.value == null || data.value === undefined) {
         tbody.insertAdjacentHTML(
           "afterbegin",
           `<tr>
-                <th scope="row">${data.value}</td>
-                <td>${data.a}</td>
-                <td>${data.b}</td>
-                <td>${data.c}</td>
-                <td>${data.average}</td>
-            </tr>`
+              <th scope="row">${value}</th>
+              <td>Invalid</td>
+              <td>Invalid</td>
+              <td>Invalid</td>
+              <td>Invalid</td>
+          </tr>`
+        );
+      } else {
+        tbody.insertAdjacentHTML(
+          "afterbegin",
+          `<tr>
+              <th scope="row">${data.value}</th>
+              <td>${data.a}</td>
+              <td>${data.b}</td>
+              <td>${data.c}</td>
+              <td>${data.average}</td>
+          </tr>`
         );
       }
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      feedback.textContent = "Server error, please try again later.";
+      feedback.classList.add("d-block");
+    });
 }

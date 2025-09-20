@@ -44,3 +44,8 @@ body {
     3px 3px 0 white, 0px 3px 0 white, 3px 0px 0 white, 0px -3px 0 white,
     -3px 0px 0 white;
 }
+
+.table > thead > tr > th {
+  background-color: rgb(222, 198, 247) !important;
+  color: rgb(38, 3, 46) !important;
+}
