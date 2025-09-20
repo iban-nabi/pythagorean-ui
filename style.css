@@ -1,0 +1,46 @@
+body {
+  background-image: url("res/img/equations.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+button {
+  color: white !important;
+  background-color: rgb(38, 3, 46) !important;
+}
+
+.bg-light {
+  background-color: rgb(242, 231, 253) !important;
+}
+
+.bg-purple {
+  background-color: #ddcaff !important; /* Custom purple */
+}
+
+.w-28 {
+  width: 28% !important;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("res/fonts/static/Montserrat-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("res/fonts/static/Montserrat-Black.ttf") format("truetype");
+}
+
+body {
+  font-family: "Montserrat-Regular";
+}
+
+.web-name {
+  font-family: "Montserrat-Black";
+  color: rgb(38, 3, 46);
+  text-shadow: -3px -3px 0 white, 3px -3px 0 white, -3px 3px 0 white,
+    3px 3px 0 white, 0px 3px 0 white, 3px 0px 0 white, 0px -3px 0 white,
+    -3px 0px 0 white;
+}
