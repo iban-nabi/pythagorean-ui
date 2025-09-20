@@ -11,12 +11,8 @@ button {
   background-color: rgb(38, 3, 46) !important;
 }
 
-.bg-light {
+.bg-light-purple {
   background-color: rgb(242, 231, 253) !important;
-}
-
-.bg-purple {
-  background-color: #ddcaff !important; /* Custom purple */
 }
 
 .w-28 {
