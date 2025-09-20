@@ -45,9 +45,9 @@ footer {
     -3px 0px 0 white;
 }
 
-table {
+table,
+li {
   border-color: rgb(231, 205, 255) !important;
-  color: rgb(38, 3, 46) !important;
 }
 
 table > thead > tr > th {
@@ -55,6 +55,7 @@ table > thead > tr > th {
 }
 
 th,
-td {
+td,
+li {
   color: rgb(38, 3, 46) !important;
 }
