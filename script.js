@@ -4,11 +4,13 @@ document
   .getElementById("pythagorean-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    const value = document.getElementById("input-box").value.trim();
+    const inputBox = document.getElementById("input-box");
+    const value = inputBox.value.trim();
     const feedback = document.querySelector("#invalid-msg");
 
     feedback.textContent = "";
     feedback.classList.remove("d-block");
+    inputBox.value = "";
 
     if (value === "") {
       feedback.textContent = "Input cannot be empty!";
