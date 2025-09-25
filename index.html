@@ -13,101 +13,91 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
-  <body class="d-flex flex-column min-vh-100">
+  <body>
+    <!-- website name heading -->
+    <h1 class="mb-4 text-center display-1 web-name pt-5">
+      📐Pythagorean Checker!
+    </h1>
+
     <div
-      class="d-flex flex-column justify-content-start align-items-center p-5"
+      class="d-flex flex-column justify-content-start align-items-center px-5"
     >
-      <!-- website name heading -->
-      <h1 class="mb-4 text-center display-1 web-name">
-        📐Pythagorean Checker!
-      </h1>
+      <div class="col-12 col-md-10 col-lg-8 p-4 bg-light-purple rounded shadow">
+        <!-- input form -->
+        <form id="pythagorean-form" method="get" class="mb-4">
+          <label for="input" class="form-label fs-3" id="form-text">
+            Enter a perfect square number:
+          </label>
 
-      <div class="container">
-        <div class="row justify-content-center">
-          <div
-            class="col-12 col-md-10 col-lg-8 p-4 bg-light-purple rounded shadow"
-          >
-            <!-- input form -->
-            <form id="pythagorean-form" method="get" class="mb-4">
-              <label for="input" class="form-label fs-3" id="form-text">
-                Enter a perfect square number:
-              </label>
-
-              <div class="row g-2">
-                <div class="col-12 col-md-9">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="input"
-                    id="input-box"
-                  />
-                  <div class="invalid-feedback" id="invalid-msg"></div>
-                </div>
-
-                <div class="col-12 col-md-3">
-                  <button type="submit" class="btn btn-primary rounded w-100">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </form>
-
-            <!-- table div for results -->
-            <div class="table-responsive">
-              <table
-                class="table table-light text-center"
-                id="pythagorean-table"
-              >
-                <thead>
-                  <tr>
-                    <th scope="col">Input</th>
-                    <th scope="col">A</th>
-                    <th scope="col">B</th>
-                    <th scope="col">C</th>
-                    <th scope="col">Average</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="no-entries-default">
-                    <td colspan="5" class="text-center">No entries yet</td>
-                  </tr>
-                </tbody>
-              </table>
+          <div class="row g-2">
+            <div class="col-12 col-md-9">
+              <input
+                type="text"
+                class="form-control"
+                name="input"
+                id="input-box"
+              />
+              <div class="invalid-feedback" id="invalid-msg"></div>
             </div>
 
-            <!-- div for rules -->
-            <div class="mt-4">
-              <p>
-                The <strong>Pythagorean Checker</strong> lets you test perfect
-                square numbers and see if they can form a
-                <strong>Pythagorean triple</strong>.
-              </p>
-              <h5 class="mt-3">Rules</h5>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  Enter a <strong> whole perfect square number</strong>.
-                </li>
-                <li class="list-group-item">
-                  The application calculates the possible sides
-                  <strong>A, B, and C</strong> of a right triangle using the
-                  Pythagorean theorem (<em>a² + b² = c²</em>).
-                </li>
-                <li class="list-group-item">
-                  A, B, and C should not be <strong>0 or negative</strong>.
-                </li>
-                <li class="list-group-item">
-                  If valid, the Pythagorean values will be shown along with the
-                  <strong>average of the sides</strong>.
-                </li>
-                <li class="list-group-item">
-                  Inputs that are not whole perfect square numbers, zero,
-                  negative, or cannot form a valid Pythagorean triple will
-                  return an
-                  <strong>"Invalid"</strong> result.
-                </li>
-              </ul>
+            <div class="col-12 col-md-3">
+              <button type="submit" class="btn btn-primary rounded w-100">
+                Submit
+              </button>
             </div>
           </div>
+        </form>
+
+        <!-- table div for results -->
+        <div class="table-responsive">
+          <table class="table table-light text-center" id="pythagorean-table">
+            <thead>
+              <tr>
+                <th scope="col">Input</th>
+                <th scope="col">A</th>
+                <th scope="col">B</th>
+                <th scope="col">C</th>
+                <th scope="col">Average</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="no-entries-default">
+                <td colspan="5" class="text-center">No entries yet</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- div for rules -->
+        <div class="mt-4">
+          <p>
+            The <strong>Pythagorean Checker</strong> lets you test perfect
+            square numbers and see if they can form a
+            <strong>Pythagorean triple</strong>.
+          </p>
+          <h5 class="mt-3">Rules</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              Enter a <strong> whole perfect square number</strong>.
+            </li>
+            <li class="list-group-item">
+              The application calculates the possible sides
+              <strong>A, B, and C</strong> of a right triangle using the
+              Pythagorean theorem (<em>a² + b² = c²</em>).
+            </li>
+            <li class="list-group-item">
+              A, B, and C should not be <strong>0 or negative</strong>.
+            </li>
+            <li class="list-group-item">
+              If valid, the Pythagorean values will be shown along with the
+              <strong>average of the sides</strong>.
+            </li>
+            <li class="list-group-item">
+              Inputs that are not whole perfect square numbers, zero, negative,
+              or cannot form a valid Pythagorean triple will return an
+              <strong>"Invalid"</strong> result.
+            </li>
+          </ul>
         </div>
       </div>
     </div>
